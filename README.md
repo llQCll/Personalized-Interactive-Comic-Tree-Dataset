@@ -85,16 +85,19 @@ Generated images can shift the short-term affective state. The stable profile an
 dataset_tools/
   dataset_pipeline.py          staged text/image/calibration pipeline
   run_end_to_end_dataset.py    end-to-end runner with timing records
+  select_and_normalize_profiles.py
+                               select raw profiles and map them to dimensions
   build_topic_root_assets.py   helper for shared topic root assets
   prepare_user_topic_assets.py helper for user-topic asset folders
   build_contrast_web.py        local HTML visualization builder
   verify_dataset_format.py     format verifier for public assets and tree JSON
 assets/topic_roots/            curated shared root nodes for 12 topics
+data/user_profiles.jsonl       initial raw user profile file
 docs/
   DATASET_CONSTRUCTION.md      detailed data schema and workflow
 ```
 
-Generated runs, local configs, raw user files, and image batches are intentionally ignored by git.
+Generated runs, local configs, non-curated raw user files, and image batches are intentionally ignored by git.
 
 ## Quick Dry Run
 
@@ -133,6 +136,27 @@ python run_end_to_end_dataset.py --profile-limit 1 --topics "Hidden Castle" --to
 ```
 
 For non-dry runs, keep model service settings and credentials outside the repository.
+
+## Selecting And Mapping User Profiles
+
+The initial raw user profile file is included at `data/user_profiles.jsonl`. To select informative profiles:
+
+```powershell
+cd dataset_tools
+python select_and_normalize_profiles.py --profiles ../data/user_profiles.jsonl --limit 5
+```
+
+To select and map profiles into the long-term motivation and short-term affective dimensions:
+
+```powershell
+python select_and_normalize_profiles.py --profiles ../data/user_profiles.jsonl --limit 5 --normalize
+```
+
+For a no-service test:
+
+```powershell
+python select_and_normalize_profiles.py --profiles ../data/user_profiles.jsonl --limit 5 --normalize --dry-run
+```
 
 ## Curated Root Assets
 
@@ -174,6 +198,6 @@ Do not commit:
 - generated run directories
 - local model service settings
 - credentials
-- generated image batches unless intentionally curated for release
+- non-curated generated image batches
 
 The pipeline excludes sensitive connection settings from public run summaries.

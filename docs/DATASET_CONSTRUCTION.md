@@ -43,6 +43,38 @@ Outputs:
 
 The root prompt is topic-only. It should not use user preferences, because all users under the same topic should share the same root image.
 
+## Profile Selection And Dimension Mapping
+
+The repository includes the initial raw profile file at `data/user_profiles.jsonl`.
+
+Use `dataset_tools/select_and_normalize_profiles.py` to select profiles before running full tree construction. By default, profiles are ranked by a simple evidence-richness score using profile text length plus positive and negative preference counts.
+
+Select the top profiles:
+
+```powershell
+cd dataset_tools
+python select_and_normalize_profiles.py --profiles ../data/user_profiles.jsonl --limit 5
+```
+
+Select a specific user:
+
+```powershell
+python select_and_normalize_profiles.py --profiles ../data/user_profiles.jsonl --user-id 2071 --limit 1
+```
+
+Select and map profiles to the dataset dimensions:
+
+```powershell
+python select_and_normalize_profiles.py --profiles ../data/user_profiles.jsonl --limit 5 --normalize
+```
+
+The actual mapping logic is implemented in `DatasetPipeline.normalize_profile()`. It converts raw profile text into:
+
+- `stable_profile`: 8 long-term interactive motivation dimensions
+- `affective_state_0`: 7 short-term affect dimensions, usually initialized near neutral
+- `profile_summary`
+- `dimension_rationales`
+
 ## Stage 2: Image Generation
 
 The image stage reads saved prompts from the text stage and generates node images.

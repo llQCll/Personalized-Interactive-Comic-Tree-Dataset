@@ -51,6 +51,11 @@ EDGE_REQUIRED_KEYS = {
     "generation_prompt",
 }
 
+PROFILE_REQUIRED_KEYS = {
+    "user_id",
+    "profile",
+}
+
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 
 
@@ -165,9 +170,45 @@ def verify_tree(tree_path: Path) -> list[str]:
     return errors
 
 
+def verify_profiles(profile_path: Path) -> list[str]:
+    errors: list[str] = []
+    if not profile_path.exists():
+        fail(errors, profile_path, "profile file does not exist")
+        return errors
+
+    row_count = 0
+    seen_ids: set[str] = set()
+    with profile_path.open("r", encoding="utf-8-sig", errors="replace") as handle:
+        for line_number, line in enumerate(handle, 1):
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError as exc:
+                fail(errors, profile_path, f"line {line_number} is not valid JSON: {exc}")
+                continue
+            row_count += 1
+            missing = sorted(PROFILE_REQUIRED_KEYS - set(row))
+            if missing:
+                fail(errors, profile_path, f"line {line_number} missing keys: {', '.join(missing)}")
+            user_id = str(row.get("user_id", "")).strip()
+            if not user_id:
+                fail(errors, profile_path, f"line {line_number} has empty user_id")
+            if user_id in seen_ids:
+                fail(errors, profile_path, f"line {line_number} duplicates user_id={user_id}")
+            seen_ids.add(user_id)
+            if not str(row.get("profile", "")).strip():
+                fail(errors, profile_path, f"line {line_number} has empty profile")
+
+    if row_count == 0:
+        fail(errors, profile_path, "profile file has no rows")
+    return errors
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Verify public root assets or generated tree JSON format.")
     parser.add_argument("--root-assets", default="", help="Path to public topic root assets.")
+    parser.add_argument("--profiles", default="", help="Optional raw user profile JSONL to validate.")
     parser.add_argument("--tree", default="", help="Optional tree.json to validate.")
     return parser.parse_args()
 
@@ -177,10 +218,12 @@ def main() -> None:
     errors: list[str] = []
     if args.root_assets:
         errors.extend(verify_root_assets(Path(args.root_assets)))
+    if args.profiles:
+        errors.extend(verify_profiles(Path(args.profiles)))
     if args.tree:
         errors.extend(verify_tree(Path(args.tree)))
-    if not args.root_assets and not args.tree:
-        raise SystemExit("Provide --root-assets and/or --tree.")
+    if not args.root_assets and not args.profiles and not args.tree:
+        raise SystemExit("Provide --root-assets, --profiles, and/or --tree.")
 
     if errors:
         print("Format verification failed:")

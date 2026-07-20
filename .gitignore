@@ -28,6 +28,7 @@ config*.json
 
 # Dataset inputs and generated outputs
 dataset_tools/dataset_runs*/
+dataset_tools/profile_selection/
 dataset_tools/topic_root_assets/
 dataset_tools/user_topic_assets/
 dataset_tools/*profiles*.jsonl
@@ -35,6 +36,8 @@ dataset_runs*/
 topic_root_assets/
 user_topic_assets/
 *profiles*.jsonl
+!data/
+!data/user_profiles.jsonl
 *.log
 
 # Large generated media
