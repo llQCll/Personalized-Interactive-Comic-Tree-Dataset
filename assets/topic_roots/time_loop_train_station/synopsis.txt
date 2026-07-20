@@ -1,0 +1,1 @@
+A train station clock repeats the same minute, and a traveler must decide whether to board the impossible train, inspect the clock, or follow echoes from previous loops.

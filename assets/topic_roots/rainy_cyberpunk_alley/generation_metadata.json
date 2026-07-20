@@ -1,0 +1,23 @@
+{
+  "path": "root.png",
+  "model": "gpt-image-2",
+  "size": "1024x1024",
+  "quality": "high",
+  "usage": {
+    "input_tokens": 169,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 169
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+      "image_tokens": 5488,
+      "text_tokens": 0
+    },
+    "total_tokens": 5657
+  },
+  "topic_id": "rainy_cyberpunk_alley",
+  "topic": "Rainy Cyberpunk Alley",
+  "synopsis": "In a neon alley during a storm, a courier receives a scrambled signal that points toward a vending shrine, a rooftop route, and a shadowed figure under the rain.",
+  "generated_at": "2026-07-15 18:55:32"
+}

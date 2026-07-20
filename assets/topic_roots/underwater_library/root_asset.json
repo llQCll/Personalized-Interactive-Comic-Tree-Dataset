@@ -1,0 +1,27 @@
+{
+  "topic_id": "underwater_library",
+  "topic": "Underwater Library",
+  "synopsis": "A submerged library protected by glass domes awakens when a diver opens a shell-shaped catalog, revealing books, currents, and sea creatures that may each guide the next discovery.",
+  "world_bible": {
+    "premise": "A submerged library protected by glass domes awakens when a diver opens a shell-shaped catalog, revealing books, currents, and sea creatures that may each guide the next discovery.",
+    "visual_style": "High-quality interactive comic root panel with clear clickable regions, strong atmosphere, and no user-specific personalization.",
+    "main_entities": [],
+    "protected_entities": [
+      "consistent protagonist",
+      "signature object or scene anchor"
+    ],
+    "continuity_rules": [
+      "The root panel is shared by all users under this topic.",
+      "The root image must be topic-only and must not contain user preference information.",
+      "Keep multiple visually readable interaction targets for later branching.",
+      "Do not include readable text, captions, dialogue bubbles, logos, or watermarks."
+    ]
+  },
+  "root_state": {
+    "location": "shared opening scene for Underwater Library",
+    "narrative_status": "A submerged library protected by glass domes awakens when a diver opens a shell-shaped catalog, revealing books, currents, and sea creatures that may each guide the next discovery."
+  },
+  "root_prompt": "Shared root comic panel for an interactive branching story. Wide underwater fantasy scene inside a vast glass-domed library on the ocean floor. A young diver in a graceful retro-fantasy diving suit floats near a shell-shaped catalog device, while shelves of waterproof books curve upward through blue-green water. Outside the glass dome, coral arches, drifting manta rays, and a distant locked archive door are visible. Distinct interaction targets include the glowing shell catalog, a floating open book, a curious octopus near a shelf, and the sealed archive door. Luminous aquatic lighting, caustic patterns, soft bubbles, colorful coral, magical scholarly mood, clean comic illustration. No text, no captions, no dialogue, no user-personalized traits.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}

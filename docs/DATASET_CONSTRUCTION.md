@@ -197,6 +197,26 @@ python run_end_to_end_dataset.py --profile-limit 1 --topics "Hidden Castle"
 
 Keep all private service settings outside git.
 
+## Curated Root Assets
+
+The repository includes a public root-node asset library at `assets/topic_roots/`.
+
+Each topic contains:
+
+- `root.png`
+- `synopsis.txt`
+- `root_prompt.txt`
+- `root_asset.json`
+- `generation_metadata.json`
+
+These root nodes are meant to be shared initial scenes. They should remain topic-only and should not encode any user-specific preference.
+
+Verify the public assets with:
+
+```powershell
+python dataset_tools/verify_dataset_format.py --root-assets assets/topic_roots
+```
+
 ## Generated Files
 
 Typical run layout:

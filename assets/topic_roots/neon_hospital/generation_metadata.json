@@ -1,0 +1,23 @@
+{
+  "path": "root.png",
+  "model": "gpt-image-2",
+  "size": "1024x1024",
+  "quality": "high",
+  "usage": {
+    "input_tokens": 161,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 161
+    },
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    },
+    "total_tokens": 1533
+  },
+  "topic_id": "neon_hospital",
+  "topic": "Neon Hospital",
+  "synopsis": "In a rainlit future clinic, a diagnostic AI detects an impossible vital sign, opening choices between the patient room, the glowing medical console, and a sealed emergency corridor.",
+  "generated_at": "2026-07-15 18:45:13"
+}

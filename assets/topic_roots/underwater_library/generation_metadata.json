@@ -1,0 +1,23 @@
+{
+  "path": "root.png",
+  "model": "gpt-image-2",
+  "size": "1024x1024",
+  "quality": "high",
+  "usage": {
+    "input_tokens": 159,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 159
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+      "image_tokens": 5488,
+      "text_tokens": 0
+    },
+    "total_tokens": 5647
+  },
+  "topic_id": "underwater_library",
+  "topic": "Underwater Library",
+  "synopsis": "A submerged library protected by glass domes awakens when a diver opens a shell-shaped catalog, revealing books, currents, and sea creatures that may each guide the next discovery.",
+  "generated_at": "2026-07-15 18:49:44"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "root.png",
+  "model": "gpt-image-2",
+  "size": "1024x1024",
+  "quality": "high",
+  "usage": {
+    "input_tokens": 136,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 136
+    },
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    },
+    "total_tokens": 1508
+  },
+  "topic_id": "miniature_city_inside_a_watch",
+  "topic": "Miniature City Inside a Watch",
+  "synopsis": "Inside an opened pocket watch, a tiny city runs on gears and bells, and a newly arrived repairer must choose which district of the living mechanism to touch first.",
+  "generated_at": "2026-07-15 19:07:14"
+}

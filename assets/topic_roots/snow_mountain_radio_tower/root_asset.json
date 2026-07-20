@@ -1,0 +1,27 @@
+{
+  "topic_id": "snow_mountain_radio_tower",
+  "topic": "Snow Mountain Radio Tower",
+  "synopsis": "At a remote mountain radio tower, a signal from beneath the snow begins to answer back, pointing toward the antenna, an old rescue map, and lights moving in the storm.",
+  "world_bible": {
+    "premise": "At a remote mountain radio tower, a signal from beneath the snow begins to answer back, pointing toward the antenna, an old rescue map, and lights moving in the storm.",
+    "visual_style": "High-quality interactive comic root panel with clear clickable regions, strong atmosphere, and no user-specific personalization.",
+    "main_entities": [],
+    "protected_entities": [
+      "consistent protagonist",
+      "signature object or scene anchor"
+    ],
+    "continuity_rules": [
+      "The root panel is shared by all users under this topic.",
+      "The root image must be topic-only and must not contain user preference information.",
+      "Keep multiple visually readable interaction targets for later branching.",
+      "Do not include readable text, captions, dialogue bubbles, logos, or watermarks."
+    ]
+  },
+  "root_state": {
+    "location": "shared opening scene for Snow Mountain Radio Tower",
+    "narrative_status": "At a remote mountain radio tower, a signal from beneath the snow begins to answer back, pointing toward the antenna, an old rescue map, and lights moving in the storm."
+  },
+  "root_prompt": "Shared root comic panel for an interactive branching story. Wide snowy adventure scene on a high mountain ridge at blue hour. A bundled radio operator stands outside a small weather station hut, holding a crackling handheld receiver. A tall radio tower rises into swirling snow, its red warning lights glowing softly. Distinct interaction targets include the tower ladder, an old rescue map pinned inside the hut window, strange lights moving beyond the ridge, and a half-buried cable leading under the snow. Crisp atmospheric comic style, icy blues, warm cabin light, windblown snow, tense survival mystery, no readable text, no captions, no dialogue, no user-specific details.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}

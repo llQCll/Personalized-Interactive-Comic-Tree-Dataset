@@ -1,0 +1,27 @@
+{
+  "topic_id": "talking_animal_courtroom",
+  "topic": "Talking Animal Courtroom",
+  "synopsis": "A woodland courtroom convenes after a stolen moonberry pie vanishes, and the first scene offers witnesses, evidence, and a suspicious judge's gavel as possible leads.",
+  "world_bible": {
+    "premise": "A woodland courtroom convenes after a stolen moonberry pie vanishes, and the first scene offers witnesses, evidence, and a suspicious judge's gavel as possible leads.",
+    "visual_style": "High-quality interactive comic root panel with clear clickable regions, strong atmosphere, and no user-specific personalization.",
+    "main_entities": [],
+    "protected_entities": [
+      "consistent protagonist",
+      "signature object or scene anchor"
+    ],
+    "continuity_rules": [
+      "The root panel is shared by all users under this topic.",
+      "The root image must be topic-only and must not contain user preference information.",
+      "Keep multiple visually readable interaction targets for later branching.",
+      "Do not include readable text, captions, dialogue bubbles, logos, or watermarks."
+    ]
+  },
+  "root_state": {
+    "location": "shared opening scene for Talking Animal Courtroom",
+    "narrative_status": "A woodland courtroom convenes after a stolen moonberry pie vanishes, and the first scene offers witnesses, evidence, and a suspicious judge's gavel as possible leads."
+  },
+  "root_prompt": "Shared root comic panel for an interactive branching story. Bright whimsical courtroom inside a giant hollow oak tree. Talking animals gather as a trial is about to begin: an owl judge at a carved wooden bench, a nervous rabbit witness, a fox advocate, and a table holding a missing-pie plate with glittering crumbs. The protagonist is a small human visitor or neutral clerk holding a simple notebook, positioned so the viewer can choose among evidence, witness, judge's gavel, or side door. Warm storybook comic style, expressive animal faces, sunbeams through leaves, cozy wood textures, playful mystery, clear interaction targets. No readable text, no captions, no dialogue bubbles, no user-specific traits.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}

@@ -88,6 +88,8 @@ dataset_tools/
   build_topic_root_assets.py   helper for shared topic root assets
   prepare_user_topic_assets.py helper for user-topic asset folders
   build_contrast_web.py        local HTML visualization builder
+  verify_dataset_format.py     format verifier for public assets and tree JSON
+assets/topic_roots/            curated shared root nodes for 12 topics
 docs/
   DATASET_CONSTRUCTION.md      detailed data schema and workflow
 ```
@@ -131,6 +133,24 @@ python run_end_to_end_dataset.py --profile-limit 1 --topics "Hidden Castle" --to
 ```
 
 For non-dry runs, keep model service settings and credentials outside the repository.
+
+## Curated Root Assets
+
+The repository includes 12 public topic root nodes in `assets/topic_roots/`. Each topic folder contains:
+
+- `root.png`
+- `synopsis.txt`
+- `root_prompt.txt`
+- `root_asset.json`
+- `generation_metadata.json`
+
+These files are sanitized for release: paths are relative, and local run paths or private service settings are not included.
+
+Verify the asset format with:
+
+```powershell
+python dataset_tools/verify_dataset_format.py --root-assets assets/topic_roots
+```
 
 ## Outputs
 

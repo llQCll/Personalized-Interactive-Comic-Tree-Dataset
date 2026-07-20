@@ -1,0 +1,27 @@
+{
+  "topic_id": "desert_whale_caravan",
+  "topic": "Desert Whale Caravan",
+  "synopsis": "A caravan crosses a sea of golden dunes beneath enormous sky-whales, where a singing compass, ancient bones, and a storm-lit oasis suggest different routes forward.",
+  "world_bible": {
+    "premise": "A caravan crosses a sea of golden dunes beneath enormous sky-whales, where a singing compass, ancient bones, and a storm-lit oasis suggest different routes forward.",
+    "visual_style": "High-quality interactive comic root panel with clear clickable regions, strong atmosphere, and no user-specific personalization.",
+    "main_entities": [],
+    "protected_entities": [
+      "consistent protagonist",
+      "signature object or scene anchor"
+    ],
+    "continuity_rules": [
+      "The root panel is shared by all users under this topic.",
+      "The root image must be topic-only and must not contain user preference information.",
+      "Keep multiple visually readable interaction targets for later branching.",
+      "Do not include readable text, captions, dialogue bubbles, logos, or watermarks."
+    ]
+  },
+  "root_state": {
+    "location": "shared opening scene for Desert Whale Caravan",
+    "narrative_status": "A caravan crosses a sea of golden dunes beneath enormous sky-whales, where a singing compass, ancient bones, and a storm-lit oasis suggest different routes forward."
+  },
+  "root_prompt": "Shared root comic panel for an interactive branching story. Wide sunlit desert fantasy scene with a small caravan paused on rolling golden dunes. Above the caravan, several enormous translucent sky-whales drift through the bright blue air like living clouds. A young guide in a wind scarf holds a small bronze singing compass while pack animals wait nearby. In the distance are three readable choices: a whale shadow crossing the sand, half-buried ancient rib bones, and a green oasis flickering under a far sandstorm. Warm adventurous illustration, comic panel framing, sweeping scale, clear silhouettes, ochre sand, turquoise sky, pearly whale bodies, magical realism, no text, no captions, no modern vehicles, no user-specific details.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}

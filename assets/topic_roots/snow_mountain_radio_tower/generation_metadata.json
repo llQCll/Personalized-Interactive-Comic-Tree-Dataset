@@ -1,0 +1,23 @@
+{
+  "path": "root.png",
+  "model": "gpt-image-2",
+  "size": "1024x1024",
+  "quality": "high",
+  "usage": {
+    "input_tokens": 152,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 152
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+      "image_tokens": 5488,
+      "text_tokens": 0
+    },
+    "total_tokens": 5640
+  },
+  "topic_id": "snow_mountain_radio_tower",
+  "topic": "Snow Mountain Radio Tower",
+  "synopsis": "At a remote mountain radio tower, a signal from beneath the snow begins to answer back, pointing toward the antenna, an old rescue map, and lights moving in the storm.",
+  "generated_at": "2026-07-15 19:06:07"
+}

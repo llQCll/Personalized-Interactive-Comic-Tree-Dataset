@@ -1,0 +1,35 @@
+{
+  "topic_id": "hidden_castle",
+  "topic": "Hidden Castle",
+  "synopsis": "A forgotten castle exists behind a veil of forest mist, visible only when moonlight strikes an ancient silver compass at the edge of the woods. The story begins the moment the path to the castle first appears, before any character has chosen whether to enter, flee, or investigate.",
+  "world_bible": {
+    "premise": "A forgotten castle exists behind a veil of forest mist, visible only when moonlight strikes an ancient silver compass at the edge of the woods. The story begins the moment the path to the castle first appears, before any character has chosen whether to enter, flee, or investigate.",
+    "visual_style": "Moody fantasy adventure comic, cinematic wide panels, inked linework with painterly colors, cool blue moonlight, deep emerald forest shadows, subtle golden magical highlights, atmospheric fog, detailed medieval stonework, mysterious but not horror-gory.",
+    "main_entities": [
+      "consistent protagonist: a young traveler in a dark teal hooded cloak, leather satchel, simple boots, no visible modern technology, face partially shadowed",
+      "key object: an antique silver compass with a cracked glass face and a faintly glowing needle",
+      "hidden castle: vast ivy-covered medieval castle partially revealed through mist, with crooked towers, narrow arched windows, and a sealed front gate",
+      "moonlit forest: dense ancient trees, tangled roots, wet leaves, blue fog, fireflies",
+      "threshold path: newly revealed stone trail leading from the forest edge toward the castle gate"
+    ],
+    "protected_entities": [
+      "consistent protagonist",
+      "key object"
+    ],
+    "continuity_rules": [
+      "The protagonist always wears the same dark teal hooded cloak and carries the leather satchel unless a later branch explicitly changes this.",
+      "The antique silver compass remains the central key object; its cracked glass face and faintly glowing needle must stay recognizable.",
+      "The castle is hidden by mist and ancient magic; it should feel newly revealed rather than publicly known.",
+      "The root panel must contain no personalized traits, names, dialogue, captions, or user-specific choices.",
+      "Maintain a mysterious fantasy tone with wonder and tension, avoiding modern vehicles, phones, firearms, or futuristic elements.",
+      "Downstream branches may alter the path taken, allies encountered, dangers awakened, and secrets discovered, but must preserve the castle, compass, and protagonist design continuity."
+    ]
+  },
+  "root_state": {
+    "location": "moonlit edge of an ancient forest, facing a mist-veiled hidden castle newly revealed in the distance",
+    "narrative_status": "the protagonist has just discovered the hidden castle path as the compass begins to glow; no decision has been made yet"
+  },
+  "root_prompt": "Wide cinematic fantasy comic panel, shared root scene: at the moonlit edge of a dense ancient forest, a young traveler stands in the foreground with their back turned, wearing a dark teal hooded cloak, simple boots, and a small leather satchel. In their hand is an antique silver compass with cracked glass and a faintly glowing needle pointing forward. Ahead, blue-white mist parts to reveal a vast hidden medieval castle in the distance, ivy-covered stone walls, crooked towers, narrow arched windows, and a sealed front gate. A newly revealed stone path winds from the tangled forest roots toward the castle. Cool blue moonlight, emerald shadows, tiny fireflies, subtle golden magic around the compass needle, atmospheric fog, mysterious wonder, inked comic linework with painterly colors, highly detailed environment, no text, no speech bubbles, no captions, no modern objects.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}

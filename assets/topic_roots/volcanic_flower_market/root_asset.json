@@ -1,0 +1,27 @@
+{
+  "topic_id": "volcanic_flower_market",
+  "topic": "Volcanic Flower Market",
+  "synopsis": "A market of fireproof flowers blooms beside a gentle volcano, where a rare ember seed reacts to heat, music, and rival gardeners competing for its next form.",
+  "world_bible": {
+    "premise": "A market of fireproof flowers blooms beside a gentle volcano, where a rare ember seed reacts to heat, music, and rival gardeners competing for its next form.",
+    "visual_style": "High-quality interactive comic root panel with clear clickable regions, strong atmosphere, and no user-specific personalization.",
+    "main_entities": [],
+    "protected_entities": [
+      "consistent protagonist",
+      "signature object or scene anchor"
+    ],
+    "continuity_rules": [
+      "The root panel is shared by all users under this topic.",
+      "The root image must be topic-only and must not contain user preference information.",
+      "Keep multiple visually readable interaction targets for later branching.",
+      "Do not include readable text, captions, dialogue bubbles, logos, or watermarks."
+    ]
+  },
+  "root_state": {
+    "location": "shared opening scene for Volcanic Flower Market",
+    "narrative_status": "A market of fireproof flowers blooms beside a gentle volcano, where a rare ember seed reacts to heat, music, and rival gardeners competing for its next form."
+  },
+  "root_prompt": "Shared root comic panel for an interactive branching story. Wide vibrant fantasy marketplace built on black volcanic stone terraces beside a softly glowing volcano. Merchants sell impossible flowers: lava lilies, glass petals, smoke orchids, and ember seeds in ceramic bowls. A young gardener in a protective apron holds a rare ember seed that glows in their palm. Distinct interaction targets include a musical flower stall, a steam vent, a rival gardener's cart, and a path toward the volcano greenhouse. Bright colorful comic illustration, warm reds and oranges balanced with lush greens and blues, festive crowd silhouettes, magical botany, no text, no captions, no dialogue, no user-specific information.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}

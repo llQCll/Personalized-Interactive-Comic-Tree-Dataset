@@ -1,0 +1,27 @@
+{
+  "topic_id": "abandoned_space_elevator",
+  "topic": "Abandoned Space Elevator",
+  "synopsis": "At the base of a silent orbital elevator, a maintenance badge suddenly reactivates, offering paths through the control deck, cable shaft, and derelict station ruins above.",
+  "world_bible": {
+    "premise": "At the base of a silent orbital elevator, a maintenance badge suddenly reactivates, offering paths through the control deck, cable shaft, and derelict station ruins above.",
+    "visual_style": "High-quality interactive comic root panel with clear clickable regions, strong atmosphere, and no user-specific personalization.",
+    "main_entities": [],
+    "protected_entities": [
+      "consistent protagonist",
+      "signature object or scene anchor"
+    ],
+    "continuity_rules": [
+      "The root panel is shared by all users under this topic.",
+      "The root image must be topic-only and must not contain user preference information.",
+      "Keep multiple visually readable interaction targets for later branching.",
+      "Do not include readable text, captions, dialogue bubbles, logos, or watermarks."
+    ]
+  },
+  "root_state": {
+    "location": "shared opening scene for Abandoned Space Elevator",
+    "narrative_status": "At the base of a silent orbital elevator, a maintenance badge suddenly reactivates, offering paths through the control deck, cable shaft, and derelict station ruins above."
+  },
+  "root_prompt": "Shared root comic panel for an interactive branching story. Wide cinematic sci-fi scene at dusk: the colossal base of an abandoned space elevator rises from a cracked coastal launch platform into clouds and stars. A lone technician in a worn orange maintenance jacket stands before a dormant control console, holding a small reactivated access badge that glows pale blue. Distinct possible targets include the control deck, an open maintenance hatch leading into the cable shaft, a broken service drone, and the distant elevator ribbon vanishing upward. Grand scale, clean hard-sci-fi shapes, weathered metal, sea mist, sunset orange and cold blue lights, hopeful mystery, no readable text, no logos, no dialogue, no user-specific references.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}

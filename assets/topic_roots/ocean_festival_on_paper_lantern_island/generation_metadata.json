@@ -1,0 +1,23 @@
+{
+  "path": "root.png",
+  "model": "gpt-image-2",
+  "size": "1024x1024",
+  "quality": "high",
+  "usage": {
+    "input_tokens": 157,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 157
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+      "image_tokens": 5488,
+      "text_tokens": 0
+    },
+    "total_tokens": 5645
+  },
+  "topic_id": "ocean_festival_on_paper_lantern_island",
+  "topic": "Ocean Festival on Paper Lantern Island",
+  "synopsis": "On an island lit by floating paper lanterns, the tide carries a message in a bottle, inviting choices among the festival pier, a lantern boat, and a moonlit reef path.",
+  "generated_at": "2026-07-15 19:10:54"
+}

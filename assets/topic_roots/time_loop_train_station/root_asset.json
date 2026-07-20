@@ -1,0 +1,27 @@
+{
+  "topic_id": "time_loop_train_station",
+  "topic": "Time-loop Train Station",
+  "synopsis": "A train station clock repeats the same minute, and a traveler must decide whether to board the impossible train, inspect the clock, or follow echoes from previous loops.",
+  "world_bible": {
+    "premise": "A train station clock repeats the same minute, and a traveler must decide whether to board the impossible train, inspect the clock, or follow echoes from previous loops.",
+    "visual_style": "High-quality interactive comic root panel with clear clickable regions, strong atmosphere, and no user-specific personalization.",
+    "main_entities": [],
+    "protected_entities": [
+      "consistent protagonist",
+      "signature object or scene anchor"
+    ],
+    "continuity_rules": [
+      "The root panel is shared by all users under this topic.",
+      "The root image must be topic-only and must not contain user preference information.",
+      "Keep multiple visually readable interaction targets for later branching.",
+      "Do not include readable text, captions, dialogue bubbles, logos, or watermarks."
+    ]
+  },
+  "root_state": {
+    "location": "shared opening scene for Time-loop Train Station",
+    "narrative_status": "A train station clock repeats the same minute, and a traveler must decide whether to board the impossible train, inspect the clock, or follow echoes from previous loops."
+  },
+  "root_prompt": "Shared root comic panel for an interactive branching story. Wide cinematic magical-realism train station at twilight. A grand old clock above the platform shows an impossible repeated minute using abstract clock hands rather than readable numbers. A traveler with a small suitcase stands between three clear choices: a glowing train with open doors, the huge looping station clock, and translucent echo-figures of the traveler walking along a side platform. Warm station lights, cool blue evening sky, brass and wood textures, light fog, subtle time fragments, elegant comic linework, mysterious but inviting mood. No readable text, no captions, no dialogue, no modern brand marks, no user-specific traits.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}

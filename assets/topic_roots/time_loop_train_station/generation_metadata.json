@@ -1,0 +1,23 @@
+{
+  "path": "root.png",
+  "model": "gpt-image-2",
+  "size": "1024x1024",
+  "quality": "high",
+  "usage": {
+    "input_tokens": 185,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 185
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+      "image_tokens": 5488,
+      "text_tokens": 0
+    },
+    "total_tokens": 5673
+  },
+  "topic_id": "time_loop_train_station",
+  "topic": "Time-loop Train Station",
+  "synopsis": "A train station clock repeats the same minute, and a traveler must decide whether to board the impossible train, inspect the clock, or follow echoes from previous loops.",
+  "generated_at": "2026-07-15 19:02:59"
+}

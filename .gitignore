@@ -42,6 +42,10 @@ user_topic_assets/
 *.jpg
 *.jpeg
 *.webp
+!assets/
+!assets/topic_roots/
+!assets/topic_roots/**/
+!assets/topic_roots/**/root.png
 
 # OS/editor
 .DS_Store

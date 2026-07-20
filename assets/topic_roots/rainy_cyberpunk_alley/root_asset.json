@@ -1,0 +1,27 @@
+{
+  "topic_id": "rainy_cyberpunk_alley",
+  "topic": "Rainy Cyberpunk Alley",
+  "synopsis": "In a neon alley during a storm, a courier receives a scrambled signal that points toward a vending shrine, a rooftop route, and a shadowed figure under the rain.",
+  "world_bible": {
+    "premise": "In a neon alley during a storm, a courier receives a scrambled signal that points toward a vending shrine, a rooftop route, and a shadowed figure under the rain.",
+    "visual_style": "High-quality interactive comic root panel with clear clickable regions, strong atmosphere, and no user-specific personalization.",
+    "main_entities": [],
+    "protected_entities": [
+      "consistent protagonist",
+      "signature object or scene anchor"
+    ],
+    "continuity_rules": [
+      "The root panel is shared by all users under this topic.",
+      "The root image must be topic-only and must not contain user preference information.",
+      "Keep multiple visually readable interaction targets for later branching.",
+      "Do not include readable text, captions, dialogue bubbles, logos, or watermarks."
+    ]
+  },
+  "root_state": {
+    "location": "shared opening scene for Rainy Cyberpunk Alley",
+    "narrative_status": "In a neon alley during a storm, a courier receives a scrambled signal that points toward a vending shrine, a rooftop route, and a shadowed figure under the rain."
+  },
+  "root_prompt": "Shared root comic panel for an interactive branching story. Wide rainy cyberpunk alley scene at night, dense with reflections and bright neon signs rendered as abstract unreadable shapes. A young courier in a practical rain jacket stands under a leaking awning, holding a small glowing data charm with a scrambled signal. Distinct interaction targets include a vending-machine shrine, a fire escape leading to rooftops, a shadowed figure beneath a transparent umbrella, and a puddle reflecting a hidden symbol. High-energy urban comic style, saturated cyan, amber, and magenta lighting, wet pavement, steam, cables, compact storefronts, cinematic noir mood. No readable text, no brand logos, no dialogue, no user-specific traits.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}

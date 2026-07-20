@@ -1,0 +1,27 @@
+{
+  "topic_id": "miniature_city_inside_a_watch",
+  "topic": "Miniature City Inside a Watch",
+  "synopsis": "Inside an opened pocket watch, a tiny city runs on gears and bells, and a newly arrived repairer must choose which district of the living mechanism to touch first.",
+  "world_bible": {
+    "premise": "Inside an opened pocket watch, a tiny city runs on gears and bells, and a newly arrived repairer must choose which district of the living mechanism to touch first.",
+    "visual_style": "High-quality interactive comic root panel with clear clickable regions, strong atmosphere, and no user-specific personalization.",
+    "main_entities": [],
+    "protected_entities": [
+      "consistent protagonist",
+      "signature object or scene anchor"
+    ],
+    "continuity_rules": [
+      "The root panel is shared by all users under this topic.",
+      "The root image must be topic-only and must not contain user preference information.",
+      "Keep multiple visually readable interaction targets for later branching.",
+      "Do not include readable text, captions, dialogue bubbles, logos, or watermarks."
+    ]
+  },
+  "root_state": {
+    "location": "shared opening scene for Miniature City Inside a Watch",
+    "narrative_status": "Inside an opened pocket watch, a tiny city runs on gears and bells, and a newly arrived repairer must choose which district of the living mechanism to touch first."
+  },
+  "root_prompt": "Shared root comic panel for an interactive branching story. Macro fantasy comic scene inside an opened antique pocket watch. A tiny repairer stands on a brass gear bridge overlooking a miniature city built among cogs, springs, bell towers, and glowing windows. The watch case forms a circular frame around the scene. Distinct interaction targets include a jammed central gear, a bell tower ringing silently, a small train running along a spring, and a glowing door under the watch hands. Warm brass, teal shadows, intricate mechanical detail, whimsical sense of scale, polished magical steampunk mood. No readable text, no captions, no dialogue, no user-specific traits.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}

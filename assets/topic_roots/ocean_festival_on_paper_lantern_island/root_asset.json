@@ -1,0 +1,27 @@
+{
+  "topic_id": "ocean_festival_on_paper_lantern_island",
+  "topic": "Ocean Festival on Paper Lantern Island",
+  "synopsis": "On an island lit by floating paper lanterns, the tide carries a message in a bottle, inviting choices among the festival pier, a lantern boat, and a moonlit reef path.",
+  "world_bible": {
+    "premise": "On an island lit by floating paper lanterns, the tide carries a message in a bottle, inviting choices among the festival pier, a lantern boat, and a moonlit reef path.",
+    "visual_style": "High-quality interactive comic root panel with clear clickable regions, strong atmosphere, and no user-specific personalization.",
+    "main_entities": [],
+    "protected_entities": [
+      "consistent protagonist",
+      "signature object or scene anchor"
+    ],
+    "continuity_rules": [
+      "The root panel is shared by all users under this topic.",
+      "The root image must be topic-only and must not contain user preference information.",
+      "Keep multiple visually readable interaction targets for later branching.",
+      "Do not include readable text, captions, dialogue bubbles, logos, or watermarks."
+    ]
+  },
+  "root_state": {
+    "location": "shared opening scene for Ocean Festival on Paper Lantern Island",
+    "narrative_status": "On an island lit by floating paper lanterns, the tide carries a message in a bottle, inviting choices among the festival pier, a lantern boat, and a moonlit reef path."
+  },
+  "root_prompt": "Shared root comic panel for an interactive branching story. Wide bright coastal festival scene on a small island at moonrise. Hundreds of warm paper lanterns float above turquoise water and along a wooden pier. A young visitor in simple festival clothes stands near the shoreline holding a sealed glass bottle with a glowing message inside. Distinct interaction targets include a lantern boat ready to depart, a reef path revealed by low tide, a musician's pier, and a cluster of lanterns drifting toward the open ocean. Joyful magical comic style, warm gold lantern light, clear blue moonlight, gentle waves, festive but mysterious atmosphere. No readable text, no captions, no dialogue, no user-specific details.",
+  "root_image": "root.png",
+  "asset_metadata": "generation_metadata.json"
+}
