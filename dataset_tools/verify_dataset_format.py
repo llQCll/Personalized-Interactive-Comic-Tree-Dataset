@@ -56,6 +56,36 @@ PROFILE_REQUIRED_KEYS = {
     "profile",
 }
 
+NORMALIZED_PROFILE_REQUIRED_KEYS = {
+    "user_id",
+    "raw_profile",
+    "stable_profile",
+    "affective_state_0",
+    "profile_summary",
+    "dimension_rationales",
+}
+
+STABLE_PROFILE_DIMS = {
+    "goal_progress",
+    "mastery_logic",
+    "challenge_seeking",
+    "social_attachment",
+    "cooperative_orientation",
+    "world_discovery",
+    "role_immersion",
+    "aesthetic_customization",
+}
+
+AFFECT_DIMS = {
+    "pleasure",
+    "arousal",
+    "dominance",
+    "tension",
+    "curiosity",
+    "empathy",
+    "cognitive_load",
+}
+
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 
 
@@ -205,10 +235,51 @@ def verify_profiles(profile_path: Path) -> list[str]:
     return errors
 
 
+def verify_normalized_profiles(profile_path: Path) -> list[str]:
+    errors: list[str] = []
+    if not profile_path.exists():
+        fail(errors, profile_path, "normalized profile file does not exist")
+        return errors
+
+    row_count = 0
+    with profile_path.open("r", encoding="utf-8-sig", errors="replace") as handle:
+        for line_number, line in enumerate(handle, 1):
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError as exc:
+                fail(errors, profile_path, f"line {line_number} is not valid JSON: {exc}")
+                continue
+            row_count += 1
+            missing = sorted(NORMALIZED_PROFILE_REQUIRED_KEYS - set(row))
+            if missing:
+                fail(errors, profile_path, f"line {line_number} missing keys: {', '.join(missing)}")
+            stable = row.get("stable_profile", {})
+            affect = row.get("affective_state_0", {})
+            if set(stable) != STABLE_PROFILE_DIMS:
+                fail(errors, profile_path, f"line {line_number} stable_profile dimensions mismatch")
+            if set(affect) != AFFECT_DIMS:
+                fail(errors, profile_path, f"line {line_number} affective_state_0 dimensions mismatch")
+            for dim, value in stable.items():
+                if not isinstance(value, (int, float)) or not 0.0 <= float(value) <= 1.0:
+                    fail(errors, profile_path, f"line {line_number} stable_profile.{dim} must be in [0,1]")
+            for dim, value in affect.items():
+                if float(value) != 0.5:
+                    fail(errors, profile_path, f"line {line_number} affective_state_0.{dim} must be exactly 0.5")
+            if not str(row.get("profile_summary", "")).strip():
+                fail(errors, profile_path, f"line {line_number} profile_summary is empty")
+
+    if row_count == 0:
+        fail(errors, profile_path, "normalized profile file has no rows")
+    return errors
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Verify public root assets or generated tree JSON format.")
     parser.add_argument("--root-assets", default="", help="Path to public topic root assets.")
     parser.add_argument("--profiles", default="", help="Optional raw user profile JSONL to validate.")
+    parser.add_argument("--normalized-profiles", default="", help="Optional normalized profile JSONL to validate.")
     parser.add_argument("--tree", default="", help="Optional tree.json to validate.")
     return parser.parse_args()
 
@@ -220,10 +291,12 @@ def main() -> None:
         errors.extend(verify_root_assets(Path(args.root_assets)))
     if args.profiles:
         errors.extend(verify_profiles(Path(args.profiles)))
+    if args.normalized_profiles:
+        errors.extend(verify_normalized_profiles(Path(args.normalized_profiles)))
     if args.tree:
         errors.extend(verify_tree(Path(args.tree)))
-    if not args.root_assets and not args.profiles and not args.tree:
-        raise SystemExit("Provide --root-assets, --profiles, and/or --tree.")
+    if not args.root_assets and not args.profiles and not args.normalized_profiles and not args.tree:
+        raise SystemExit("Provide --root-assets, --profiles, --normalized-profiles, and/or --tree.")
 
     if errors:
         print("Format verification failed:")

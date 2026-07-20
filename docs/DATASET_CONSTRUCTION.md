@@ -71,9 +71,11 @@ python select_and_normalize_profiles.py --profiles ../data/user_profiles.jsonl -
 The actual mapping logic is implemented in `DatasetPipeline.normalize_profile()`. It converts raw profile text into:
 
 - `stable_profile`: 8 long-term interactive motivation dimensions
-- `affective_state_0`: 7 short-term affect dimensions, usually initialized near neutral
+- `affective_state_0`: 7 short-term affect dimensions, fixed to `0.5` at initialization
 - `profile_summary`
 - `dimension_rationales`
+
+The model does not infer the initial affective state from the raw profile. Initial affect is deliberately neutral so that short-term emotion is produced by later image stimuli and interactions.
 
 ## Stage 2: Image Generation
 
@@ -183,6 +185,20 @@ Dimensions:
 - `curiosity`: immediate desire to reveal, inspect, understand, or continue exploring unresolved information.
 - `empathy`: momentary care, identification, or emotional resonance with characters and relationships.
 - `cognitive_load`: how complex, overloaded, ambiguous, or difficult to process the current scene feels.
+
+At `t=0`, every affective dimension is initialized as:
+
+```json
+{
+  "pleasure": 0.5,
+  "arousal": 0.5,
+  "dominance": 0.5,
+  "tension": 0.5,
+  "curiosity": 0.5,
+  "empathy": 0.5,
+  "cognitive_load": 0.5
+}
+```
 
 ## Dynamic State
 

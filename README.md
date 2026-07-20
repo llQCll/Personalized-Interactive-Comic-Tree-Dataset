@@ -77,7 +77,7 @@ The affective state is based on the Self-Assessment Manikin structure and extend
 - `empathy`
 - `cognitive_load`
 
-Generated images can shift the short-term affective state. The stable profile and current affect are combined into a composite state for branch planning and later profile estimation.
+The initial affective state is fixed to `0.5` for every dimension. Generated images and interactions then shift the short-term affective state. The stable profile and current affect are combined into a composite state for branch planning and later profile estimation.
 
 ## Repository Layout
 
@@ -174,6 +174,13 @@ Verify the asset format with:
 
 ```powershell
 python dataset_tools/verify_dataset_format.py --root-assets assets/topic_roots
+```
+
+Raw and normalized profile files can also be verified:
+
+```powershell
+python dataset_tools/verify_dataset_format.py --profiles data/user_profiles.jsonl
+python dataset_tools/verify_dataset_format.py --normalized-profiles dataset_tools/profile_selection/selected_profiles_normalized.jsonl
 ```
 
 ## Outputs

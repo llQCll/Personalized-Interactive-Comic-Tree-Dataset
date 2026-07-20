@@ -190,6 +190,10 @@ def clamp_vector(values: dict[str, float], dims: list[str]) -> dict[str, float]:
     return {dim: round(clamp(float(values.get(dim, 0.5))), 4) for dim in dims}
 
 
+def neutral_affective_state() -> dict[str, float]:
+    return {dim: 0.5 for dim in AFFECT_DIMS}
+
+
 def stable_hash(text: str) -> int:
     digest = hashlib.sha256(text.encode("utf-8", errors="ignore")).hexdigest()
     return int(digest[:12], 16)
@@ -611,8 +615,8 @@ class DatasetPipeline:
         )
         user_prompt = f"""
 Raw profile text is auxiliary evidence, not the final label.
-Map it into an 8D long-term interactive motivation profile in [0, 1],
-a neutral 7D short-term affective state in [0, 1], and one concise English profile summary.
+Map it into an 8D long-term interactive motivation profile in [0, 1]
+and one concise English profile summary.
 
 Stable motivation scale metadata:
 {json_dumps(SCALE_METADATA["stable_profile"])}
@@ -626,13 +630,12 @@ Scoring rule:
 - 0.4-0.6: neutral, mixed, or insufficient evidence.
 - 0.6-0.8: high.
 - 0.8-1.0: very high.
-- The initial affective_state_0 should usually be neutral 0.5 for every dimension unless the raw profile strongly implies a persistent baseline.
+- Do not infer initial affective_state_0 from the raw profile. It is fixed by the pipeline to 0.5 for every short-term affect dimension.
 - Do not diagnose clinical personality. These are task-specific creative-interactive motivations.
 
 Return schema:
 {{
   "stable_profile": {{"goal_progress": 0.5, "...": 0.5}},
-  "affective_state_0": {{"pleasure": 0.5, "...": 0.5}},
   "profile_summary": "...",
   "dimension_rationales": {{"goal_progress": "..."}}
 }}
@@ -646,7 +649,7 @@ Raw profile:
             "user_id": user_id,
             "raw_profile": raw_text,
             "stable_profile": clamp_vector(data.get("stable_profile", {}), PERSONALITY_DIMS),
-            "affective_state_0": clamp_vector(data.get("affective_state_0", {}), AFFECT_DIMS),
+            "affective_state_0": neutral_affective_state(),
             "profile_summary": str(data.get("profile_summary", "")),
             "dimension_rationales": data.get("dimension_rationales", {}),
         }
@@ -1272,7 +1275,7 @@ def slugify(text: str) -> str:
 def mock_normalized_profile(*, user_id: str, raw_text: str) -> dict[str, Any]:
     rng = random.Random(stable_hash(user_id + raw_text))
     stable = {dim: round(0.25 + rng.random() * 0.60, 4) for dim in PERSONALITY_DIMS}
-    affect = {dim: 0.5 for dim in AFFECT_DIMS}
+    affect = neutral_affective_state()
     return {
         "user_id": user_id,
         "raw_profile": raw_text,
