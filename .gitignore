@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local configs and secrets
+.env
+.env.*
+*.key
+*.pem
+config*.json
+*secret*
+*credential*
+
+# Dataset inputs and generated outputs
+dataset_tools/dataset_runs*/
+dataset_tools/topic_root_assets/
+dataset_tools/user_topic_assets/
+dataset_tools/*profiles*.jsonl
+dataset_runs*/
+topic_root_assets/
+user_topic_assets/
+*profiles*.jsonl
+*.log
+
+# Large generated media
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
