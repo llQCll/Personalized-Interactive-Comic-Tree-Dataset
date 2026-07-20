@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import html
+import argparse
 import json
 import shutil
 from pathlib import Path
@@ -178,6 +179,11 @@ def tree_stage_html(tree: dict[str, Any], mode: str) -> str:
 def write_tree_pages(tree_path: Path, rel_root: str) -> None:
     user_dir = tree_path.parent
     tree = read_json(tree_path)
+    root_asset_path = user_dir / "root_asset.json"
+    if root_asset_path.exists():
+        root_asset = read_json(root_asset_path)
+        tree.setdefault("root_prompt", root_asset.get("root_prompt", ""))
+        tree.setdefault("synopsis", root_asset.get("synopsis", ""))
     page_dir = WEB_DIR / "users" / f"user_{tree['user_id']}" / tree["topic_id"]
     page_dir.mkdir(parents=True, exist_ok=True)
     img_dir = page_dir / "images"
@@ -210,7 +216,8 @@ def build_gallery() -> None:
     topic_cards = []
     root_img_dir = WEB_DIR / "topic_roots"
     root_img_dir.mkdir(exist_ok=True)
-    for topic_dir in sorted([p for p in ROOT_ASSETS_DIR.iterdir() if p.is_dir() and ".backup" not in p.name]):
+    topic_dirs = sorted([p for p in ROOT_ASSETS_DIR.iterdir() if p.is_dir() and ".backup" not in p.name]) if ROOT_ASSETS_DIR.exists() else []
+    for topic_dir in topic_dirs:
         asset_path = topic_dir / "root_asset.json"
         if asset_path.exists():
             asset = read_json(asset_path)
@@ -232,7 +239,26 @@ def build_gallery() -> None:
     (WEB_DIR / "index.html").write_text(body, encoding="utf-8")
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Build local HTML pages for a generated comic tree dataset run.")
+    parser.add_argument("--run-dir", default=str(RUN_DIR), help="Run directory containing manifest.jsonl and users/*/*/tree.json.")
+    parser.add_argument("--root-assets-dir", default=str(ROOT_ASSETS_DIR), help="Optional topic root asset gallery directory.")
+    parser.add_argument("--web-dir", default="", help="Output web directory. Defaults to <run-dir>/web.")
+    return parser.parse_args()
+
+
 def main() -> None:
+    global RUN_DIR, ROOT_ASSETS_DIR, WEB_DIR
+    args = parse_args()
+    RUN_DIR = Path(args.run_dir)
+    if not RUN_DIR.is_absolute():
+        RUN_DIR = (BASE_DIR / RUN_DIR).resolve()
+    ROOT_ASSETS_DIR = Path(args.root_assets_dir)
+    if not ROOT_ASSETS_DIR.is_absolute():
+        ROOT_ASSETS_DIR = (BASE_DIR / ROOT_ASSETS_DIR).resolve()
+    WEB_DIR = Path(args.web_dir) if args.web_dir else RUN_DIR / "web"
+    if not WEB_DIR.is_absolute():
+        WEB_DIR = (BASE_DIR / WEB_DIR).resolve()
     if WEB_DIR.exists():
         shutil.rmtree(WEB_DIR)
     WEB_DIR.mkdir(parents=True)
